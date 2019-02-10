@@ -1,0 +1,58 @@
+ int []x[]={{1,2},{3,4,5},{6,7,8,9}}; 
+int [][]y=x;
+ System.out.println(y[2][1]);//7
+------------------------------------------------
+ String str="420";
+  str+=42;
+ System.out.println(str);//42042
+
+------------------------------------------------
+package test2;
+
+public class A {
+	A() {
+		System.out.println("a");
+	}
+
+}
+
+class B extends A {
+	B(String x) {
+		System.out.println(x);
+	}
+}
+
+class C extends B {
+
+	C() {
+		super("g");
+		new B("g");
+
+	}
+}
+class Test{
+	public static void main(String[] args) {
+		new C();
+	}
+}
+a
+g
+a
+g
+------------------------------------------------
+ public void takeList(List<? extends String>list){
+	 //list.add("foo");±¨´í
+	 Object o=list;
+	 String s=list.get(0);
+	 list=new ArrayList<String>();
+	// list=new ArrayList<Object>();±¨´í
+ }
+-----------------------------------------------------
+	  TreeSet<Integer> s=new TreeSet<Integer>();
+	  s.add(606);
+	  s.add(608);
+	  s.add(610);
+	  s.add(612);
+	s=  (TreeSet<Integer>) s.subSet(608, true,611,true);
+	System.out.println(s);//[608, 610]
+
